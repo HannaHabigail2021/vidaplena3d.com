@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Tienda Saludable - Productos Naturales en Girón</title>
+    
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Código SEO para Negocio Local (Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "El Nombre de tu Tienda",
+      "image": "https://www.tu-tienda.com/logo.png",
+      "@id": "https://www.tu-tienda.com/",
+      "url": "https://www.tu-tienda.com/",
+      "telephone": "+57-XXX-XXX-XXXX",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tu Dirección, Carrera XX # XX-XX",
+        "addressLocality": "Girón",
+        "addressRegion": "Santander",
+        "postalCode": "687541",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 7.0698,
+        "longitude": -73.1701
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
+
+    <!-- Estilos CSS (para un diseño limpio) -->
+    <style>
+        :root {
+            --primary-color: #0056b3; /* Un azul más corporativo */
+            --secondary-color: #218838; /* Un verde más vibrante */
+            --text-color: #343a40;
+            --background-color: #f8f9fa;
+            --white-color: #ffffff;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--white-color);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .store-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; /* Permite que el menú se ajuste en pantallas pequeñas */
+            justify-content: center;
+            gap: 10px 20px; /* Espacio vertical y horizontal entre elementos */
+        }
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Espacio entre el icono y el texto */
+        }
+        .main-nav a:hover,
+        .main-nav a.active {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        .main-nav .fa-solid {
+            font-size: 1.1em; /* Íconos ligeramente más grandes que el texto */
+        }
+        /* --- Estilos para la Página de Inicio --- */
+        .hero-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: var(--white-color);
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        .hero-section h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .product-card img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        .product-card .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .product-card .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .delivery-info {
+            text-align: center;
+            padding: 15px 20px;
+            background-color: #e7f3ff;
+            border: 1px solid #b3d7ff;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .delivery-info p {
+            margin: 0;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        .payment-methods {
+            margin-top: 30px;
+        }
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        /* --- Fin de Estilos para la Página de Inicio --- */
+        .product-page {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .product-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        .product-price {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .product-benefits {
+            margin-bottom: 30px;
+        }
+        .product-benefits h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .product-benefits ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .product-benefits li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 25px;
+        }
+        .product-benefits li::before {
+            content: '✔';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .purchase-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background-color: var(--background-color);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .quantity-selector label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .quantity-selector input {
+            width: 60px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .add-to-cart-btn {
+            flex-grow: 1;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #1e7e34;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            color: #777;
+            background-color: var(--white-color);
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="store-name">El Nombre de tu Tienda</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="vitaminas.html"><i class="fa-solid fa-pills"></i> Vitaminas</a></li>
+                <li><a href="minerales.html"><i class="fa-solid fa-gem"></i> Minerales</a></li>
+                <li><a href="omegas.html"><i class="fa-solid fa-fish-fins"></i> Omegas</a></li>
+                <li><a href="multivitaminicos.html"><i class="fa-solid fa-capsules"></i> Multivitamínicos</a></li>
+                <li><a href="probioticos.html"><i class="fa-solid fa-bacterium"></i> Probióticos</a></li>
+                <li><a href="colagenos.html"><i class="fa-solid fa-bone"></i> Colágenos</a></li>
+                <li><a href="biotinas.html"><i class="fa-solid fa-leaf"></i> Biotinas</a></li>
+                <li><a href="linea-deportiva.html"><i class="fa-solid fa-dumbbell"></i> Línea Deportiva</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Sección de Bienvenida -->
+        <section class="hero-section">
+            <h1>Bienvenido a Tu Tienda Saludable</h1>
+            <p>Los mejores productos para tu bienestar, con entrega directa en Girón, Santander. ¡Calidad y confianza cerca de ti!</p>
+        </section>
+
+        <!-- Cuadrícula de Productos -->
+        <h2 class="section-title">Nuestros Productos Destacados</h2>
+        <section class="product-grid">
+
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300.png?text=Producto+1" alt="Nombre del Producto 1">
+                <h3>Producto Increíble #1</h3>
+                <p class="price">$45.000</p>
+                <a href="#" class="btn">Ver Detalles</a>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300.png?text=Producto+2" alt="Nombre del Producto 2">
+                <h3>Suplemento Esencial</h3>
+                <p class="price">$89.900</p>
+                <a href="#" class="btn">Ver Detalles</a>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300.png?text=Producto+3" alt="Nombre del Producto 3">
+                <h3>Vitamina Completa</h3>
+                <p class="price">$62.500</p>
+                <a href="#" class="btn">Ver Detalles</a>
+            </div>
+
+            <!-- Para añadir más productos, solo copia y pega el bloque de "product-card" -->
+
+        </section>
+    </main>
+
+    <div class="container">
+        <section class="delivery-info">
+            <p><i class="fa-solid fa-truck-fast"></i> ¡Recuerda! El costo del domicilio se suma al final de tu compra.</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="payment-methods">
+            <h4>Aceptamos todos los medios de pago</h4>
+            <div class="payment-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/PSE_logo.svg/1280px-PSE_logo.svg.png" alt="PSE" height="30">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nequi_logo.svg/1280px-Nequi_logo.svg.png" alt="Nequi" height="35">
+                <i class="fa-solid fa-money-bill-wave fa-2x" style="color: var(--secondary-color);" title="Efectivo"></i>
+                <i class="fa-brands fa-cc-visa fa-2x" style="color: #1A1F71;" title="Visa"></i>
+                <i class="fa-brands fa-cc-mastercard fa-2x" style="color: #EB001B;" title="Mastercard"></i>
+            </div>
+        </div>
+        <p style="margin-top: 30px;">&copy; 2024 El Nombre de tu Tienda - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+```
+
+### Explicación del Código
+
+1.  **Estructura HTML Semántica (`<header>`, `<main>`, `<footer>`):** Esto ayuda a los motores de búsqueda a entender la estructura de tu página, lo cual es bueno para el SEO.
+2.  **Diseño con CSS:** Dentro de la etiqueta `<style>`, he añadido código CSS para darle un aspecto profesional y moderno. Crea un diseño de dos columnas para el producto (imagen a la izquierda, detalles a la derecha) que se adapta a diferentes tamaños de pantalla.
+3.  **Contenido de Ejemplo:** He puesto textos e imágenes de marcador de posición (`placeholder`). Tu siguiente paso será reemplazar:
+    *   `El Nombre de tu Tienda` por el nombre real de tu negocio.
+    *   `Nombre del Producto de Ejemplo` y la descripción.
+    *   El precio `$99.900`.
+    *   La URL de la imagen `https://via.placeholder.com/600x600...` por la foto de tu producto.
+4.  **Botón "Añadir al Carrito":** Por ahora, es un enlace visual. Para que funcione de verdad (añadir productos a un carrito y procesar pagos), necesitarás integrarlo con una plataforma como Shopify o WooCommerce, o añadir código JavaScript.
+
+Este es el punto de partida perfecto. Desde aquí, puedes duplicar esta estructura para crear más páginas de productos o construir tu página de inicio.
+
+<!--
+[PROMPT_SUGGESTION]¿Cómo puedo hacer que el botón "Añadir al Carrito" sea funcional usando JavaScript?[/PROMPT_SUGGESTION]
+[PROMPT_SUGGESTION]Crea una página de inicio para esta tienda, mostrando una cuadrícula con 3 productos.[/PROMPT_SUGGESTION]
